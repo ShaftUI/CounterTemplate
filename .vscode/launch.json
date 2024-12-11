@@ -1,0 +1,22 @@
+{
+    "configurations": [
+        {
+            "type": "lldb",
+            "request": "launch",
+            "args": [],
+            "cwd": "${workspaceFolder:CounterTemplate}",
+            "name": "Debug CounterTemplate",
+            "program": "${workspaceFolder:CounterTemplate}/.build/debug/CounterTemplate",
+            "preLaunchTask": "swift: Build Debug CounterTemplate"
+        },
+        {
+            "type": "lldb",
+            "request": "launch",
+            "args": [],
+            "cwd": "${workspaceFolder:CounterTemplate}",
+            "name": "Release CounterTemplate",
+            "program": "${workspaceFolder:CounterTemplate}/.build/release/CounterTemplate",
+            "preLaunchTask": "swift: Build Release CounterTemplate"
+        }
+    ]
+}
