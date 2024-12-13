@@ -8,10 +8,10 @@ import Shaft
 let counter = Counter()
 
 runApp(
-    Playground()
+    CounterView()
 )
 
-final class Playground: StatelessWidget {
+final class CounterView: StatelessWidget {
     func build(context: BuildContext) -> Widget {
         Column(mainAxisSize: .min, spacing: 16) {
             Text("Count: \(counter.count)")
