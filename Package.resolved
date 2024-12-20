@@ -1,5 +1,4 @@
 {
-  "originHash" : "8ef7fac07374aa1257b4f02a1dbb4c67eb676d483ed77314f0795b88316b933c",
   "pins" : [
     {
       "identity" : "csprogress",
@@ -25,7 +24,7 @@
       "location" : "https://github.com/ShaftUI/Shaft",
       "state" : {
         "branch" : "main",
-        "revision" : "afc25952107f0ce120266241c04faa2a0f0859d3"
+        "revision" : "bba2f45afd1e2947b27cac909746385329687949"
       }
     },
     {
@@ -70,7 +69,7 @@
       "location" : "https://github.com/ShaftUI/SwiftSDL3",
       "state" : {
         "branch" : "main",
-        "revision" : "a56a797f584de4e4cf3470f2e2dbf2e7fba6edf0"
+        "revision" : "d33d998856d263f19f7fc8c5f893fbb82e6564dc"
       }
     },
     {
@@ -83,5 +82,5 @@
       }
     }
   ],
-  "version" : 3
+  "version" : 2
 }
