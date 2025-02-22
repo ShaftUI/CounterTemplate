@@ -16,20 +16,34 @@ let package = Package(
         .package(
             url: "https://github.com/ShaftUI/Shaft",
             branch: "main"
-        )
+        ),
+        .package(url: "https://github.com/ShaftUI/SwiftReload.git", branch: "main"),
     ],
 
     targets: [
         .executableTarget(
             name: "CounterTemplate",
             dependencies: [
-                .product(name: "Shaft", package: "Shaft")
+                "SwiftReload",
+                .product(name: "Shaft", package: "Shaft"),
             ],
             swiftSettings: [
-                .interoperabilityMode(.Cxx)  // This is necessary to use the Skia renderer
+                .interoperabilityMode(.Cxx),  // This is necessary to use the Skia renderer
+                .unsafeFlags(
+                    ["-Xfrontend", "-enable-private-imports"],
+                    .when(configuration: .debug)
+                ),
+                .unsafeFlags(
+                    ["-Xfrontend", "-enable-implicit-dynamic"],
+                    .when(configuration: .debug)
+                ),
             ],
             linkerSettings: [
-                .unsafeFlags(["-L.shaft/skia"])  // This is necessary to use the Skia renderer
+                .unsafeFlags(["-L.shaft/skia"]),  // This is necessary to use the Skia renderer
+                .unsafeFlags(
+                    ["-Xlinker", "--export-dynamic"],
+                    .when(platforms: [.linux, .android], configuration: .debug)
+                ),
             ]
         )
     ],

@@ -1,6 +1,11 @@
 import Observation
 import Shaft
 
+#if DEBUG && !os(Windows)
+    import SwiftReload
+    LocalSwiftReloader(onReload: backend.scheduleReassemble).start()
+#endif
+
 @Observable class Counter {
     var count = 0
 }
@@ -17,7 +22,7 @@ final class CounterView: StatelessWidget {
             Text("Count: \(counter.count)")
 
             Button {
-                counter.count += 1
+                counter.count += 10
             } child: {
                 Text("Increment")
             }
