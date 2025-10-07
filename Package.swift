@@ -26,6 +26,7 @@ let package = Package(
             dependencies: [
                 "SwiftReload",
                 .product(name: "Shaft", package: "Shaft"),
+                .product(name: "ShaftSetup", package: "Shaft"),
             ],
             swiftSettings: [
                 .interoperabilityMode(.Cxx),  // This is necessary to use the Skia renderer
@@ -39,11 +40,10 @@ let package = Package(
                 ),
             ],
             linkerSettings: [
-                .unsafeFlags(["-L.shaft/skia"]),  // This is necessary to use the Skia renderer
                 .unsafeFlags(
                     ["-Xlinker", "--export-dynamic"],
                     .when(platforms: [.linux, .android], configuration: .debug)
-                ),
+                )
             ]
         )
     ],

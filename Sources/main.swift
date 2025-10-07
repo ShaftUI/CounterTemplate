@@ -1,6 +1,11 @@
 import Observation
 import Shaft
+import ShaftSetup
 
+// Use the default backend
+ShaftSetup.useDefault()
+
+// Enable hot reloading
 #if DEBUG && !os(Windows)
     import SwiftReload
     LocalSwiftReloader(onReload: backend.scheduleReassemble).start()
