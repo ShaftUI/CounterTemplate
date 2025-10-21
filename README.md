@@ -7,8 +7,6 @@ git clone https://github.com/ShaftUI/CounterTemplate.git
 
 cd CounterTemplate
 
-swift package plugin setup-skia
-
 swift run
 ```
 
